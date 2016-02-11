@@ -23,10 +23,11 @@ module.exports =
     repos = atom.project.getRepositories()
     currentTabs = atom.workspace.getTextEditors()
 
-    for tab in currentTabs
-      isClose = true
-      for repo in repos
-        isClose = false if @isModifiedTab(repo, tab) or @isNewTab(repo, tab)
-      atom.workspace.getActivePane().destroyItem(tab) if isClose
+    if repos?
+      for tab in currentTabs
+        isClose = true
+        for repo in repos
+          isClose = false if @isModifiedTab(repo, tab) or @isNewTab(repo, tab)
+        atom.workspace.getActivePane().destroyItem(tab) if isClose
 
-    atom.notifications.addSuccess('Unmodified tabs is closed!')
+      atom.notifications.addSuccess('Unmodified tabs is closed!')

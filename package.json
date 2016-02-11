@@ -3,7 +3,11 @@
   "main": "./lib/close-unmodified-tabs",
   "version": "0.1.0",
   "description": "Close all unmodified tabs.",
-  "keywords": [],
+  "keywords": [
+    "git",
+    "close",
+    "tabs"
+  ],
   "activationCommands": {
     "atom-workspace": "close-unmodified-tabs:closeTab"
   },
