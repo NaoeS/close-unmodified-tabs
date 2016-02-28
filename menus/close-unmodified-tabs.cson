@@ -1,0 +1,4 @@
+'context-menu':
+  'atom-workspace atom-text-editor': [
+    {label: 'Close Unmodified Tabs', command: 'close-unmodified-tabs:closeTab'}
+  ]
