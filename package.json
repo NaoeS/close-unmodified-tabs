@@ -1,7 +1,7 @@
 {
   "name": "close-unmodified-tabs",
   "main": "./lib/close-unmodified-tabs",
-  "version": "0.2.0",
+  "version": "1.0.0",
   "description": "Close all unmodified tabs.",
   "keywords": [
     "git",
