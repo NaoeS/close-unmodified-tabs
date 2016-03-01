@@ -30,4 +30,4 @@ module.exports =
           isClose = false if @isModifiedTab(repo, tab) or @isNewTab(repo, tab)
         atom.workspace.getActivePane().destroyItem(tab) if isClose
 
-      atom.notifications.addSuccess('Unmodified tabs is closed!')
+      atom.notifications.addSuccess('Closed unmodified tabs!')
