@@ -23,11 +23,12 @@ module.exports =
     repos = atom.project.getRepositories()
     currentTabs = atom.workspace.getTextEditors()
 
-    if repos?
+    if repos[0]?
       for tab in currentTabs
         isClose = true
         for repo in repos
-          isClose = false if @isModifiedTab(repo, tab) or @isNewTab(repo, tab)
+          isClose = false if repo? and (@isModifiedTab(repo, tab) or @isNewTab(repo, tab))
         atom.workspace.getActivePane().destroyItem(tab) if isClose
-
       atom.notifications.addSuccess('Closed unmodified tabs!')
+    else
+      atom.notifications.addWarning('Git repository not found.')
