@@ -17,6 +17,7 @@ module.exports =
     repo.isPathModified(tab.getPath())
 
   isNewTab: (repo, tab) ->
+    return true unless tab.getPath()
     repo.isPathNew(tab.getPath())
 
   closeTab: ->
